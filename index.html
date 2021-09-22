@@ -7,15 +7,23 @@
 </head>
 <body>
         <script>
+
                 $('body').terminal({
                         visit: function(what) {
                                 if (what === "resume"){
                                         window.open('https://drive.google.com/file/d/1Awj7EIJa4LqV1j3B8JXqoV6PqS-YZNxF/view?usp=sharing/', '_blank');
+                                }else if(what === "linkedin"){
+                                        window.open('https://www.linkedin.com/in/kevin-zhou-332173187/', '_blank');
+                                }else if(what === "github"){
+                                        window.open('https://github.com/zhoukev', '_blank');
+                                }else{
+                                        window.open('https://zhoukev.github.io/'+what, '_blank');
+
                                 }
                                 
                         }
                 }, {
-                        greetings: 'type visit ___ to visit a page'
+                        greetings: 'type cd ___ to visit a page\n> ls\nresume    apps    github    linkedin'
                 });
         </script>
 </body>
