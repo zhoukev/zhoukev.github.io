@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
+</head>
+<body>
+        <script>
+
+                $('body').terminal({
+                        visit: function(what) {
+                                if (what === "colorkode"){
+                                        window.open('https://apps.apple.com/ag/app/color-kode/id1193025744', '_blank');
+                                }else if(what === "word search pal"){
+                                        window.open('https://apps.apple.com/ag/app/word-search-pal/id1041829343', '_blank');
+                                }
+                                
+                        }
+                }, {
+                        greetings: 'type cd ___ to visit a page\n> ls\ncolorkode    word search pal'
+                });
+        </script>
+</body>
+</html>
