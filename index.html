@@ -7,23 +7,45 @@
 </head>
 <body>
         <script>
-
+                var pwd = "home";
                 $('body').terminal({
                         cd: function(what) {
-                                if (what === "resume"){
-                                        window.open('https://drive.google.com/file/d/1Awj7EIJa4LqV1j3B8JXqoV6PqS-YZNxF/view?usp=sharing/', '_blank');
-                                }else if(what === "linkedin"){
-                                        window.open('https://www.linkedin.com/in/kevin-zhou-332173187/', '_blank');
-                                }else if(what === "github"){
-                                        window.open('https://github.com/zhoukev', '_blank');
-                                }else{
-                                        window.location.replace('https://zhoukev.github.io/'+what, '_blank');
+                                if(pwd === "home"){
+                                        if (what === "resume"){
+                                                window.open('https://drive.google.com/file/d/1Awj7EIJa4LqV1j3B8JXqoV6PqS-YZNxF/view?usp=sharing/', '_blank');
+                                        }else if(what === "linkedin"){
+                                                window.open('https://www.linkedin.com/in/kevin-zhou-332173187/', '_blank');
+                                        }else if(what === "github"){
+                                                window.open('https://github.com/zhoukev', '_blank');
+                                        }else if(what === "apps"){
+                                                //                                        window.location.replace('https://zhoukev.github.io/'+what, '_blank');
+//                                                this.echo('\ntype cd ___ to visit a page\n> ls\n..    colorkode    word search pal');
+                                                pwd = "home/apps";
+                                        }
+                                }else if(pwd === "home/apps"){
+                                        if (what === "colorkode"){
+                                                window.open('https://apps.apple.com/ag/app/color-kode/id1193025744', '_blank');
+                                        }else if(what === "word search pal"){
+                                                window.open('https://apps.apple.com/ag/app/word-search-pal/id1041829343', '_blank');
+                                        }else if(".."){
+                                                pwd = 'home';
+                                        }
 
                                 }
                                 
+                        },
+                        ls: function() {
+                                if (pwd === "home"){
+                                        this.echo('resume    apps    github    linkedin');
+                                }else{
+                                        this.echo('..    colorkode    word search pal');
+                                }
+                        },
+                        pwd: function(){
+                                this.echo('/'+pwd);
                         }
                 }, {
-                        greetings: 'type cd ___ to visit a page\n> ls\nresume    apps    github    linkedin'
+                        greetings: '    __             _                __               \n   / /_____ _   __(_)___     ____  / /_  ____  __  __\n  / //_/ _ \\ | / / / __ \\   /_  / / __ \\/ __ \\/ / / /\n / ,< /  __/ |/ / / / / /    / /_/ / / / /_/ / /_/ / \n/_/|_|\\___/|___/_/_/ /_/    /___/_/ /_/\\____/\\__,_/  \n\ntype cd ___ to visit a page (cd .. to go back),\n     ls to list pages,\n     pwd to display current page'
                 });
         </script>
 </body>
