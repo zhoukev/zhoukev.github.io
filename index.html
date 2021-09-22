@@ -8,16 +8,14 @@
 <body>
         <script>
                 $('body').terminal({
-//                        hello: function(what) {
-//                                this.echo('Hello, ' + what +
-//                                        '. Wellcome to this terminal.');
-//                        }
-                        cd: function(what) {
-                                this.echo('Hello, ' + what +
-                                        '. Wellcome to this terminal.');
+                        visit: function(what) {
+                                if (what === "resume"){
+                                        window.open('https://drive.google.com/file/d/1Awj7EIJa4LqV1j3B8JXqoV6PqS-YZNxF/view?usp=sharing/', '_blank');
+                                }
+                                
                         }
                 }, {
-                        greetings: 'type cd ___ to visit a page'
+                        greetings: 'type visit ___ to visit a page'
                 });
         </script>
 </body>
